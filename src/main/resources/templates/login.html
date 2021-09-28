@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.6.0-1/css/bootstrap.min.css} "/>
+</head>
+<body class="hold-transition login-page">
+<script th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/1.16.0/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/4.6.0-1/js/bootstrap.min.js}"></script>
+
+   <!-- <form method="post" action="/login">
+        <input name="j_username"/>
+        <input name="j_password"/>
+        <input type="submit"/>
+    </form>-->
+   <div class="container" style="width: 300px;">
+       <form action="/login" method="post">
+           <h2 class="form-signin-heading">Please sign in</h2>
+           <input type="text" class="form-control" name="j_username" placeholder="Login" required autofocus>
+           <input type="password" class="form-control" name="j_password" placeholder="Password" required>
+           <button class="btn btn-lg btn-primary btn-block" type="submit">Sing in</button>
+       </form>
+   </div>
+</body>
+</html>

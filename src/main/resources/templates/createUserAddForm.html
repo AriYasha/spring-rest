@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create user</title>
+</head>
+<body>
+<form th:action="@{/userCreate}" th:object="${user}" method="post">
+    <label for="username">userName</label>
+    <input type="text" th:field="*{username}" id="userName" placeholder="userName">
+    <label for="password">password</label>
+    <input type="text" th:field="*{password}" id="password" placeholder="password">
+    <label for="firstName">firstName</label>
+    <input type="text" th:field="*{firstName}" id="firstName" placeholder="firstName">
+    <label for="age">Age</label>
+    <input type="number" th:field="*{age}" id="age" placeholder="Age">
+    <label>
+        <select multiple size="2" th:name="roles" th:field="*{roles}">
+            <option th:each="role : ${roles}" th:value="${role}" th:text="${role}"></option>
+        </select>
+    </label>
+
+   <!-- <select name ="roles" th:field = "*{roles}" multiple>
+        <option th:value = "'ROLE_ADMIN'"
+       th:text="ROLE_ADMIN"></option>
+        <option th:value = "'ROLE_USER'"
+                th:text="ROLE_USER"></option>
+    </select> -->
+    <!--<p th:each="role : {user}" th:utext="{roles}">Roles</p>
+    <th:block th:each="role : {user.getRoles()}">
+        <label th:utext="{role.getRole()}">d
+            <input type="checkbox" />
+        </label>
+    </th:block>
+    <select id="editRoles" name="roles" multiple size="2" required class="form-control form-control-sm">
+        <option value="ROLE_ADMIN" adminSelect >ROLE_ADMIN</option>
+        <option value="ROLE_USER"   userSelect >ROLE_USER</option>
+    </select>-->
+    <input type="submit" value="Create User">
+</form>
+</body>
+</html>
